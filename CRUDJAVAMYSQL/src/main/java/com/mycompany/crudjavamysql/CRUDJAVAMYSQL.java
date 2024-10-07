@@ -1,5 +1,7 @@
 package com.mycompany.crudjavamysql;
 
+import Formularios.FormPrincipal;
+
 /**
  * @author eefloresu@unah.hn
  * @version 0.1.0
@@ -8,6 +10,8 @@ package com.mycompany.crudjavamysql;
 public class CRUDJAVAMYSQL {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        Formularios.FormPrincipal objetoFormulario = new Formularios.FormPrincipal();
+        objetoFormulario.setVisible(true);
     }
 }
