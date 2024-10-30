@@ -21,3 +21,16 @@ fnacimiento date,
 foto longblob,
 FOREIGN KEY (fksexo) REFERENCES sexo(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+insert into usuarios (nombres, apellidos, fksexo, edad, fnacimiento, foto) Values ("Juan","Perez",1,21,"01/01/2003","foto");
+
+select * from usuarios;
+
+-- Mostrar limite de conexiones
+show variables like 'max_connections';
+-- Mostrar conexiones abiertas
+show status like 'threads_connected';
+
+
+SELECT usuarios.id,usuarios.nombres,usuarios.apellidos,sexo.sexo,usuarios.edad,usuarios.fnacimiento,usuarios.foto
+FROM usuarios INNER JOIN sexo ON usuarios.fksexo = sexo.id;

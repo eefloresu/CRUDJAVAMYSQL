@@ -25,6 +25,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         
         Clases.Usuario objetoUsuario = new Clases.Usuario();
         objetoUsuario.MostrarSexoCombo(cbSexo);
+        objetoUsuario.MostrarUsuarios(tbUsuarios);
     }
 
     /**
@@ -226,6 +227,11 @@ public class FormPrincipal extends javax.swing.JFrame {
 
             }
         ));
+        tbUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbUsuariosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbUsuarios);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -305,6 +311,12 @@ public class FormPrincipal extends javax.swing.JFrame {
         Clases.Usuario objUsuario = new Clases.Usuario();
         objUsuario.AgregarUsuario(txtNombres, txtApellidos, cbSexo, txtEdad, dtFecha, archivoSeleccionado);
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void tbUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbUsuariosMouseClicked
+        Clases.Usuario objUsuario = new Clases.Usuario();
+        objUsuario.Seleccionar(tbUsuarios, txtId, txtNombres, txtApellidos, cbSexo, txtEdad, dtFecha, LBLimg);
+        
+    }//GEN-LAST:event_tbUsuariosMouseClicked
 
     /**
      * @param args the command line arguments
